@@ -1,0 +1,20 @@
+<div class="container p-4" style="margin-top: 70px;">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Welcome {{user.fullname}}</h3>
+                    {{#if (eq user.tipo 'surcusal')}}
+                    <a href="/animales/mios" class="btn btn-primary m-4">
+                        Empieza a subir los datos de las adopcion
+                    </a>
+                    {{else}}
+                    <a href="/animales/todos" class="btn btn-primary m-4">
+                        Empieza a ver a los animales
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

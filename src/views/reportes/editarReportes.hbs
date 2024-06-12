@@ -1,0 +1,11 @@
+<form action="/reportes/edit/{{reportes.id}}" method="POST" style="margin-top: 90px;">
+
+    <label for="tipo" class="form-label">Estado del reporte</label>
+    <select class="form-select" id="estado" name="estado">
+        <option value="Pendiente">Pendiente</option>
+        <option value="En Proceso">En Proceso</option>
+        <option value="Resuelto">Resuelto</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Actualizar Reporte</button>
+</form>

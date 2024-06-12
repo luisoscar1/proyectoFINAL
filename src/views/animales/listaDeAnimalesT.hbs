@@ -1,0 +1,44 @@
+<div class="container p-4" style="margin-top: 60px;">
+    <div class="row">
+        {{#each animales}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src="/uploads/{{image}}" class="card-img-top" alt="Imagen de {{nombre}}">
+
+                    <a target="_blank">
+                        <h3 class="card-title text-uppercase">
+                            {{nombre}}
+                            
+                        </h3>
+                    </a>
+                    <p class="m-2">Especie: {{especie}}</p>
+                    <p class="m-2">Raza: {{raza}}</p>
+                    <p class="m-2">Edad: {{edad}} años</p>
+                    <p class="m-2">Sexo: {{sexo}}</p>
+                    <p class="m-2">Fecha de Ingreso: {{dateString fecha_ingreso}}</p>
+                    <p class="m-2">Fecha de Nacimiento: {{dateString fecha_nacimiento}}</p>
+                    <p class="m-2">Vacunas: {{vacunas}}</p>
+                    <p class="m-2">Esterilizado: {{esterilizado}}</p>
+
+
+                    <a class="btn btn-danger" href="/animales/adoptar/{{id}}"
+                        style="background-color: rgb(47, 212, 47);">
+                        Adoptar
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>Aun no hay alguna mascota, en lo que esperas en lo que una veterinaria suba uno por que no haces un roperto si es que encuentras un perro abadonado.</p>
+                <a href="/reportes/add">Hazlo aqui!</a>
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,151 @@
+<div class="container p-4" style="margin-top: 70px;">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Registrarse</h3>
+        </div>
+        <div class="card-body">
+          <form action="/signup" method="POST">
+            <div class="form-group">
+              <input type="text" name="username" placeholder="Username" class="form-control" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Email" class="form-control" id="validationCustomEmail"
+                required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="password" name="password" placeholder="Password" class="form-control" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="tel" name="telefono" placeholder="Teléfono" class="form-control" pattern="[0-9]{10}"
+                title="Por favor, ingresa un número de teléfono válido de 10 dígitos" required>
+              <div class="invalid-feedback">
+                Por favor, ingresa un número de teléfono válido de 10 dígitos.
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <textarea class="form-control" name="direccion" placeholder="Dirección" id="exampleFormControlTextarea1"
+                rows="3" required></textarea>
+              <div class="invalid-feedback">
+                Por favor, ingresa una dirección válida.
+              </div>
+            </div>
+
+            <br>
+            <div class="form-group">
+              <select id="role" name="tipo" class="form-select" required>
+                <option value="">Selecciona tu rol</option>
+                <option value="adoptante">Adoptante</option>
+                <option value="surcusal">surcusal</option>
+              </select>
+            </div>
+            <div id="adoptanteFields" style="display: none;">
+              <!-- Campos adicionales para adoptante -->
+              <br>
+              <div class="form-group">
+                <input type="text" name="fullname" placeholder="Nombre completo" class="form-control">
+                <div class="invalid-feedback">
+                  Por favor, ingresa una nombre válida.
+                </div>
+              </div>
+              <br>
+            </div>
+            <div id="sucursalFields" style="display: none;">
+              <!-- Campos adicionales para sucursal -->
+              <br>
+              <div class="form-group">
+                <input type="text" name="fullname" placeholder="Nombre de la surcusal" class="form-control">
+                <div class="invalid-feedback">
+                  Por favor, ingresa una nombre válida.
+                </div>
+              </div>
+              <br>
+            </div>
+            <br>
+            <div class="form-group">
+              <button class="btn btn-success btn-block">Registrarse</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+      document.getElementById('role').addEventListener('change', function () {
+        var role = this.value;
+        var adoptanteFields = document.getElementById('adoptanteFields');
+        var sucursalFields = document.getElementById('sucursalFields');
+        var allInputs = adoptanteFields.querySelectorAll('input');
+        var allInputsSucursal = sucursalFields.querySelectorAll('input');
+
+        // Deshabilitar todos los inputs primero
+        allInputs.forEach(input => {
+            input.disabled = true;
+        });
+        allInputsSucursal.forEach(input => {
+            input.disabled = true;
+        });
+
+        if (role === 'adoptante') {
+            adoptanteFields.style.display = 'block';
+            sucursalFields.style.display = 'none';
+            // Habilitar solo los inputs necesarios
+            allInputs.forEach(input => {
+                input.disabled = false;
+            });
+        } else if (role === 'surcusal') {
+            adoptanteFields.style.display = 'none';
+            sucursalFields.style.display = 'block';
+            allInputsSucursal.forEach(input => {
+                input.disabled = false;
+            });
+        } else {
+            adoptanteFields.style.display = 'none';
+            sucursalFields.style.display = 'none';
+        }
+    });
+</script>
+{{!-- <div class="container p-4" style="margin-top: 70px;">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Registrarse</h3>
+        </div>
+        <div class="card-body">
+          <form action="/signup" method="POST">
+            <div class="form-group">
+              <input type="text" name="username" placeholder="Username" class="form-control" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Email" class="form-control" id="validationCustomEmail"
+                required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="password" name="password" placeholder="Password" class="form-control" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="type" name="fullname" placeholder="Nombre completo" class="form-control" autofocus required>
+            </div>
+            <br>
+            <div class="form-group">
+              <button class="btn btn-success btn-block">
+                Registrarse
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}

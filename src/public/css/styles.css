@@ -1,0 +1,75 @@
+body {
+    background: #f5f6fa;
+    font-family: 'Oswald', sans-serif;
+
+    overflow: auto;
+}
+
+.index {
+    width: 100vw;
+    height: 100vh;
+}
+
+.nav-item .nav-link {
+  margin-right: 18px; /* Ajusta el margen como necesario */
+}
+.navbar {
+  background: rgb(0, 0, 0) !important; /* Color de fondo */
+  padding-top: 13px; /* Aumenta el padding superior */
+  padding-bottom: 13px; /* Aumenta el padding inferior */
+}
+.nav-link {
+    color: #fff !important;
+}
+
+.masthead {
+    color: white;
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: url('/img/fondo1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.offcanvas {
+  color: white !important; /* Establece el color de texto de la navbar y offcanvas a blanco */
+  background-color: #000000; /* Mantiene el color de fondo de la navbar */
+
+}
+
+
+.navbar-toggler-container {
+  color: white !important; /* Establece el color de texto de la navbar y offcanvas a blanco */
+
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 10px; /* Espacio entre el botón y el enlace */
+}
+.offcanvas.offcanvas-start {
+  transition: background-color 0.3s ease; /* Ajusta la duración según necesites */
+  transition-duration: 10.5s; /* Aumenta este valor para ralentizar la transición */
+
+}
+
+.offcanvas.offcanvas-start.show {
+  background-color: black;
+}
+.masthead h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media (min-width: 992px) {
+    .masthead {
+      height: 100vh;
+    }
+    .masthead h1 {
+      font-size: 5.5rem;
+    }
+  } 

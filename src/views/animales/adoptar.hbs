@@ -1,0 +1,43 @@
+<div class="container" style="margin-top: 80px;">
+    <form id="adopcionForm" action="/animales/adopciones" method="POST">
+
+        <h2>Formulario de Adopción</h2>
+
+        <h3>Adopción para {{animales.nombre}}</h3>
+
+        <img src="/uploads/{{animales.image}}" class="card-img-top small-image" alt="Imagen de {{nombre}}">
+        <input type="hidden" name="id_animal" value="{{animales.id}}">
+
+        <br>
+        <div class="form-group">
+            <label for="fecha_adopcion">Fecha de Adopción</label>
+            <input type="date" class="form-control" id="fecha_adopcion" name="fecha_adopcion" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="notas">Notas</label>
+            <textarea class="form-control" id="notas" name="notas" rows="3" required></textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-green">Enviar Todos</button>
+    </form>
+</div>
+<style>
+    .btn-green {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .small-image {
+        width: 300px;
+        /* Ajusta el ancho como necesites */
+        height: 300px;
+        /* Ajusta la altura como necesites */
+        display: block;
+        margin: 0 auto;
+    }
+</style>

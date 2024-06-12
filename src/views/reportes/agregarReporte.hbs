@@ -1,0 +1,42 @@
+<div class="container" style="margin-top: 90px;">
+    <h2>Formulario de Reporte</h2>
+    <form action="/reportes/add" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="tipo" class="form-label">Tipo de Reporte</label>
+            <select class="form-select" id="tipo" name="tipo">
+                <option value="Maltrato">Maltrato</option>
+                <option value="Perdida">Pérdida</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" name="image" type="file" id="formFile">
+        </div>
+        <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario de Sucursal</label>
+            <select class="form-select" id="surcusal" name="surcusal">
+                {{#each usuarios}}
+                <option value="{{this.fullname}}">{{this.fullname}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="ubicacion" class="form-label">Ubicación</label>
+            <input type="text" class="form-control" id="ubicacion" name="ubicacion">
+        </div>
+
+        <div class="mb-3">
+            <label for="notas" class="form-label">Notas</label>
+            <textarea class="form-control" id="notas" name="notas" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="numeroTelefono" class="form-label">Número de Teléfono</label>
+            <input type="tel" class="form-control" id="numeroTelefono" name="numeroTelefono">
+        </div>
+        <input type="hidden" id="estado" name="estado" value="Pendiente">
+
+        <button type="submit" class="btn btn-primary">Enviar Reporte</button>
+        <br>
+        <br>
+    </form>
+</div>

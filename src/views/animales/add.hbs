@@ -1,0 +1,56 @@
+<div class="container p-4" style="margin-top: 60px;">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/animales/add" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Default file input example</label>
+                            <input class="form-control" name="image" type="file" id="formFile">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre del animal"
+                                autofocus>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="text" name="especie" class="form-control" placeholder="Especie">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="text" name="raza" class="form-control" placeholder="Raza">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="number" name="edad" class="form-control" placeholder="Edad">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <select name="sexo" class="form-control">
+                                <option value="Macho">Macho</option>
+                                <option value="Hembra">Hembra</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="date" name="fecha_ingreso" class="form-control" placeholder="Fecha de Ingreso">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="date" name="fecha_nacimiento" class="form-control"
+                                placeholder="Fecha de Nacimiento">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="text" name="vacunas" class="form-control" placeholder="Vacunas">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <select name="esterilizado" class="form-control">
+                                <option value="si">Sí</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
