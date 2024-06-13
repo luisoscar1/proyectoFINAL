@@ -56,7 +56,7 @@
               <br>
             </div>
             <div id="sucursalFields" style="display: none;">
-              <!-- Campos adicionales para sucursal -->
+             
               <br>
               <div class="form-group">
                 <input type="text" name="fullname" placeholder="Nombre de la surcusal" class="form-control">
@@ -85,7 +85,6 @@
         var allInputs = adoptanteFields.querySelectorAll('input');
         var allInputsSucursal = sucursalFields.querySelectorAll('input');
 
-        // Deshabilitar todos los inputs primero
         allInputs.forEach(input => {
             input.disabled = true;
         });
@@ -96,7 +95,7 @@
         if (role === 'adoptante') {
             adoptanteFields.style.display = 'block';
             sucursalFields.style.display = 'none';
-            // Habilitar solo los inputs necesarios
+            
             allInputs.forEach(input => {
                 input.disabled = false;
             });
@@ -112,40 +111,3 @@
         }
     });
 </script>
-{{!-- <div class="container p-4" style="margin-top: 70px;">
-  <div class="row">
-    <div class="col-md-4 mx-auto">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Registrarse</h3>
-        </div>
-        <div class="card-body">
-          <form action="/signup" method="POST">
-            <div class="form-group">
-              <input type="text" name="username" placeholder="Username" class="form-control" required>
-            </div>
-            <br>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Email" class="form-control" id="validationCustomEmail"
-                required>
-            </div>
-            <br>
-            <div class="form-group">
-              <input type="password" name="password" placeholder="Password" class="form-control" required>
-            </div>
-            <br>
-            <div class="form-group">
-              <input type="type" name="fullname" placeholder="Nombre completo" class="form-control" autofocus required>
-            </div>
-            <br>
-            <div class="form-group">
-              <button class="btn btn-success btn-block">
-                Registrarse
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> --}}

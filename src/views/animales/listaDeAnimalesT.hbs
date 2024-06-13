@@ -9,7 +9,7 @@
                     <a target="_blank">
                         <h3 class="card-title text-uppercase">
                             {{nombre}}
-                            
+
                         </h3>
                     </a>
                     <p class="m-2">Especie: {{especie}}</p>
@@ -22,11 +22,13 @@
                     <p class="m-2">Esterilizado: {{esterilizado}}</p>
 
 
+                    
+                    {{#unless adoptadoPorUsuario}}
                     <a class="btn btn-danger" href="/animales/adoptar/{{id}}"
                         style="background-color: rgb(47, 212, 47);">
                         Adoptar
                     </a>
-
+                    {{/unless}}
 
                 </div>
             </div>
@@ -34,7 +36,8 @@
         {{else}}
         <div class="col-md-4 mx-auto">
             <div class="card card-body text-center">
-                <p>Aun no hay alguna mascota, en lo que esperas en lo que una veterinaria suba uno por que no haces un roperto si es que encuentras un perro abadonado.</p>
+                <p>Aun no hay alguna mascota, en lo que esperas en lo que una veterinaria suba uno por que no haces un
+                    roperto si es que encuentras un perro abadonado.</p>
                 <a href="/reportes/add">Hazlo aqui!</a>
 
             </div>

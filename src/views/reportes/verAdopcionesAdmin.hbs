@@ -1,0 +1,32 @@
+<div class="container" style="margin-top: 90px;">
+    <h2>Detalles de la Adopción</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Imagen del Perro</th>
+
+                <th scope="col">Nombre del Perro</th>
+                <th scope="col">nombre del Adoptante</th>
+                <th scope="col">Notas de la Adopción</th>
+                <th scope="col">Fecha que va a ir</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+
+                <th scope="row">{{animal.id}}</th>
+                <td><img src="/uploads/{{animal.image}}" class="card-img-top" alt="Imagen de {{animal.nombre}}"
+                        style="max-width: 150px; height: auto;"></td>
+                <td>{{animal.nombre}}</td>
+                <td>{{usuario.fullname}}</td>
+                <td>{{adopcion.notas}}</td>
+                <td>{{dateString adopcion.fecha_adopcion}}</td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>

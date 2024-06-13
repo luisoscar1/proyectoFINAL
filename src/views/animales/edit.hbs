@@ -3,15 +3,13 @@
         <div class="col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <!-- Añadir enctype para soportar la carga de archivos -->
+                    
                     <form action="/animales/edit/{{animales.id}}" method="POST" enctype="multipart/form-data">
-                        <!-- Campos existentes... -->
-
-                        <!-- Campo para cargar una nueva imagen -->
+                        
                         <div class="form-group" style="margin-bottom: 20px;">
                             <label for="imagenAnimal">Imagen del Animal</label>
                             <input type="file" name="image" class="form-control" id="imagenAnimal">
-                            <!-- Mostrar la imagen actual si existe -->
+                            
                             {{#if animales.image}}
                             <img src="/path/to/images/{{animales.image}}" alt="Imagen Actual" style="width: 100%; margin-top: 20px;">
                             {{/if}}
@@ -58,7 +56,7 @@
                                 <option value="no" {{#if (eq animales.esterilizado "no" )}}selected{{/if}}>No</option>
                             </select>
                         </div>
-                        <!-- Resto de campos... -->
+                       
                         <div class="form-group">
                             <button class="btn btn-success btn-block">
                                 Guardar
@@ -70,63 +68,3 @@
         </div>
     </div>
 </div>
-
-{{!-- <div class="container p-4" style="margin-top: 100px;">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/animales/edit/{{animales.id}}" method="POST">
-
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="text" value="{{animales.nombre}}" name="nombre" class="form-control"
-                                placeholder="Nombre del animal" autofocus>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="text" value="{{animales.especie}}" name="especie" class="form-control"
-                                placeholder="Especie">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="text" value="{{animales.raza}}" name="raza" class="form-control"
-                                placeholder="Raza">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="number" value="{{animales.edad}}" name="edad" class="form-control"
-                                placeholder="Edad">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <select name="sexo" class="form-control">
-                                <option value="Macho" {{#if (eq animales.sexo "Macho" )}}selected{{/if}}>Macho</option>
-                                <option value="Hembra" {{#if (eq animales.sexo "Hembra" )}}selected{{/if}}>Hembra
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="date" value="{{animales.fecha_ingreso}}" name="fecha_ingreso" class="form-control"
-                                placeholder="Fecha de Ingreso">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="date" value="{{animales.fecha_nacimiento}}" name="fecha_nacimiento"
-                                class="form-control" placeholder="Fecha de Nacimiento">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="text" value="{{animales.vacunas}}" name="vacunas" class="form-control"
-                                placeholder="Vacunas">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <select name="esterilizado" class="form-control">
-                                <option value="si" {{#if (eq animales.esterilizado "si" )}}selected{{/if}}>Sí</option>
-                                <option value="no" {{#if (eq animales.esterilizado "no" )}}selected{{/if}}>No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                Guardar
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}

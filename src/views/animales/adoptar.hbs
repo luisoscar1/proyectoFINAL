@@ -7,6 +7,7 @@
 
         <img src="/uploads/{{animales.image}}" class="card-img-top small-image" alt="Imagen de {{nombre}}">
         <input type="hidden" name="id_animal" value="{{animales.id}}">
+        <input type="hidden" name="id_sucursal" value="{{animales.user_id}}">
 
         <br>
         <div class="form-group">
@@ -34,9 +35,7 @@
 
     .small-image {
         width: 300px;
-        /* Ajusta el ancho como necesites */
         height: 300px;
-        /* Ajusta la altura como necesites */
         display: block;
         margin: 0 auto;
     }
