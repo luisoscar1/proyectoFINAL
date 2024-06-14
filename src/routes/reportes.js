@@ -141,7 +141,8 @@ router.get('/Eliminar/:id', async (req, res) => {
     const { id } = req.params;
     const reportes = await pool.query('SELECT * FROM reportes WHERE id = ?', [id]);
     console.log(reportes);
-    res.render('reportes/misReportesSurcusal', { reportes: reportes[0] });
+    await pool.query('DELETE FROM reportes WHERE id = ?', [id]);
+    res.redirect('/reportes/misReportesSurcusal');
 });
 
 
